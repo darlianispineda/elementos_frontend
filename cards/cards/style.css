@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin-top: 7%;
+    background-color: rgb(82, 79, 79);
+    font-family: 'proxima-nova-soft', sans-serif;
+}
+
+:root{
+    /*tarjeta 1*/
+    --color_tarjeta: rgb(241, 64, 10);
+    /*tarjeta 2*/
+    --color_fondo:rgba(238, 87, 87, 0.788);
+    --color_linea:red;
+}
+
+/*Estilos de tarjeta*/
+.cards_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    flex-wrap: wrap;
+   
+   
+    
+}
+
+
+
+.card_container{
+    width: 350px;
+    height: 400px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    overflow: hidden;
+
+    
+    
+ 
+}
+
+
+
+.card_img{
+    width: 100%;
+    height: 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: ease-in-out 1s;
+
+}
+
+/*Modelo 1*/
+.card_container:nth-child(1) .card_img{
+    
+    background-image: url("img/img1.jpg");
+   
+}
+
+
+.card_img img{
+    width: 100%;
+    height: 100%;
+}
+
+/*contenido*/
+.card_contenido{
+    width: 100%;
+    position: relative;
+    height: 100px;
+    
+}
+
+
+.card_contenido .categoria{
+    background-color: var(--color_tarjeta);
+    display: inline-block;
+    color: white;
+    font-weight: 700;
+    padding: 7px;
+    text-align: center;
+
+    position: absolute;
+    left: 0;
+    top: -32px;
+}
+
+.card_texto{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.card_contenido h3,
+.card_contenido h6{
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+.card_contenido h3{
+    font-size: 28px;
+    margin-top: 20px;
+    
+}
+
+.card_contenido h6{
+    font-size: 20px;
+    color: var(--color_tarjeta);
+}
+
+.card_contenido p{
+    display: inline-block;
+    width: 80%;
+    margin-top: 10px;
+    color: gray;
+    transform: translateY(120px);
+    transition: ease-in-out 1s;
+    
+}
+
+
+.card_container:hover .card_img{
+    height: 40%;
+    
+}
+
+.card_container:hover .card_contenido p{
+    transform: translateY(0px);
+   
+}
+
+@media (max-width: 650px) {
+    .card_img{
+        height: 40%;
+        
+    }
+    .card_contenido p{
+        transform: translateY(0px);
+       
+    }
+}
+
+/*Modelo 2*/
+.card2{
+    background-image: url("img/img4.jpg");
+   
+    
+}
+
+.card2 .card2_contenido{
+    width: 100%;
+    height: 100%;
+    background-color: var(--color_fondo);
+    transform: translateY(-100%);
+    transition: ease-in-out 1s;
+}
+
+.card2:hover .card2_contenido{
+    transform: translateY(0%);
+}
+
+.card2_texto{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+
+.card2_contenido h3{
+    font-size: 35px;
+    margin-top: 20px;
+    
+    
+}
+
+.card2_contenido span{
+    width: 80%;
+    height: 5px;
+    background-color: var(--color_linea);
+    margin: 25px 10px;
+    
+}
+
+.card2_contenido p{
+    padding: 6%;
+    
+}
+
+.card2_contenido  .boton{
+   padding: 5%;
+   border: 3px solid white;
+   border-radius: 30px;
+}
+
+
+/*tarjeta 3*/
+.card3_container{
+    width: 350px;
+    height: 400px;
+    perspective: 700;
+    -webkit-perspective: 700;
+ 
+}
+.card3_container .card{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: ease-in-out 1s ;
+}
+
+.card3_container:hover  .card{
+    transform: rotateY(180deg);
+}
+
+.lado{
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+
+.frente{
+    background-image: url("img/img4.jpg");
+    width: 100%;
+    height: 100%;
+   
+    
+}
+
+.frente h3{
+    font-size: 35px;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    display: inline-block;
+    width: 50%;
+    color: white;
+    background-color: var(--color_fondo);
+}
+
+.card3_contenido{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transition: ease-in-out 1s;
+    transform: rotateY(180deg);
+}
+.card3_texto{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+
+.card3_contenido h3{
+    font-size: 35px;
+    margin-top: 20px;
+    
+    
+}
+
+.card3_contenido span{
+    width: 80%;
+    height: 5px;
+    background-color: white;
+    margin: 25px 10px;
+    
+}
+
+.card3_contenido p{
+    padding: 6%;
+    
+}
+
+.card3_contenido  .boton{
+   padding: 5%;
+   border: 3px solid white;
+   border-radius: 30px;
+}
